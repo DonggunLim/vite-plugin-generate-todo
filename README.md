@@ -10,6 +10,10 @@
 - Automatically adds a creation date(= current date) if not provided.
 - Sorts TODOs by file path.
 
+## :package: NPM Package
+
+This package will be available on [NPM](https://www.npmjs.com/package/vite-plugin-generate-todo).
+
 ## 📞 Installation
 
 ```sh
