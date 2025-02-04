@@ -4,9 +4,11 @@
 
 ## 📌 Features
 
-- Extracts `[TODO :: ...]` comments from source files
-- Generates a `TODO.md` file at the root of your project
-- Groups TODOs by file path for easy reference
+- Extracts `[TODO :: ... (yyyy.mm.dd)]` comments and date from source files.
+- Generates a `TODO.md` file at the root of your project.
+- Groups TODOs by file path for easy reference.
+- Automatically adds a creation date(= current date) if not provided.
+- Sorts TODOs by file path.
 
 ## 📞 Installation
 
@@ -37,9 +39,10 @@ export default defineConfig({
 
 ## 📝 How It Works
 
-1. In your source code, use comments with the format `[TODO :: your-task]`.
-2. During the build process, the plugin collects all TODOs.
-3. It generates a `TODO.md` file at the root of your project.
+1. In your source code, use comments with the format `[TODO :: your-task (yyyy.mm.dd)]`.
+2. If a date is not included, the plugin will automatically add the current date.
+3. During the build process, the plugin collects all TODOs.
+4. It generates a `TODO.md` file at the root of your project, sorted by file path.
 
 ### Example:
 
@@ -51,10 +54,8 @@ const Button = () => {
 };
 
 // [TODO :: Refactor button styles]
-// [TODO :: Add accessibility features]
+// [TODO :: Add accessibility features (2025.02.04)]
 ```
-
-###
 
 ### Generated `TODO.md`:
 
@@ -63,8 +64,8 @@ const Button = () => {
 
 ### src/components/Button.tsx
 
-- [ ] Refactor button styles
-- [ ] Add accessibility features
+- [ ] Refactor button styles - (2025. 2. 4)
+- [ ] Add accessibility features - (2025. 2. 4)
 ```
 
 ## 🛠️ Plugin Options
@@ -81,5 +82,5 @@ Feel free to open issues or pull requests if you have suggestions or improvement
 
 ## Author
 
-- Maintainer: [Donggun Lim](https://github.com/DonggunLim)
+- Maintainer: [Donggun Lim](https://github.com/Ldonggun6766)
 - Email: Ldonggun6766@gmail.com
